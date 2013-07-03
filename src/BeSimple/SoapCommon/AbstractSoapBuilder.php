@@ -149,6 +149,17 @@ abstract class AbstractSoapBuilder
     }
 
     /**
+     * @param $timeout
+     * @return AbstractSoapBuilder
+     */
+    public function withTimeout($timeout)
+    {
+        $this->soapOptions['connection_timeout'] = $timeout;
+
+        return $this;
+    }
+
+    /**
      * Enables the SOAP_SINGLE_ELEMENT_ARRAYS feature.
      * If enabled arrays containing only one element will be passed as arrays otherwise the single element is extracted and directly passed.
      *
